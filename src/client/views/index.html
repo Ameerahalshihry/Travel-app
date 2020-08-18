@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/src/client/styles/header.css">
+    <link rel="stylesheet" href="/src/client/styles/form.css">
+    <link rel="stylesheet" href="/src/client/styles/footer.css">
+
+    <title>Travel application</title>
+</head>
+<body>
+    <header>
+        <div class="">
+            Logo
+        </div>
+        <div class="">
+            navigation
+        </div>
+    </header>
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <label for="destinationLabel">Enter the destination </label>
+                <input type="text" class="form-control" id="destination"  placeholder="Enter Your Destination">
+            </div>
+            <div class="form-group">
+                <label for="date">Select Start Date</label>
+                <input type="date" class="form-control" id="start-date" placeholder="Enter Date">
+            </div>
+            <div class="form-group">
+                <label for="date">Select End Date</label>
+                <input type="date" class="form-control" id="end-date" placeholder="Enter Date">
+            </div>
+            <button type="submit" class="btn btn-primary" id="btnSubmit">Submit</button>
+        </form>
+        <div class="result">
+            <h5>Trip Information</h5>
+            <img class="w-100 p-3" src="" alt="">
+            <div class="tripCity"></div>
+            <div class="tripDate"></div>
+            <div class="diffDays"></div>
+            <div class="lengthTrip"></div>
+            <div class="temp"></div>
+            <div class="description"></div>
+            <div class="humidity"></div>
+        </div>
+    </div>
+    <footer>
+        <p>This is a footer</p>
+    </footer>
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
+</body>
+</html>
